@@ -268,16 +268,59 @@ namespace Project{
             Console.WriteLine($"Сумма выплаты через год составит {s}");
         }
         public static void sr10_2(){
-            Console.WriteLine("\nЗадача №2.");
+            Console.WriteLine("\nЗадача №2. Введите ваш стаж работы (лет):");
+            double year = Convert.ToDouble(Console.ReadLine());
+            string nad = "0%";
+            if (year >= 5 && year < 10) {
+                nad = "2%";
+            }
+            else if (year >= 10 && year < 20) {
+                nad = "10%";
+            }
+            else {
+                Console.WriteLine("Ошибка в расчете надбавки");
+            }
+            Console.WriteLine($"Ваша надбавка составит {nad}");
         }
         public static void sr10_3(){
-            Console.WriteLine("\nЗадача №3.");
+            Console.WriteLine("\nЗадача №3. Введите сумму вашей зарплаты и стаж (лет):");
+            double summa = Convert.ToDouble(Console.ReadLine());
+            int year = Convert.ToInt32(Console.ReadLine());
+            double nad = 1;
+            if (year >= 5 && year < 10) {
+                nad = 1.02;
+            }
+            else if (year >= 10 && year < 20) {
+                nad = 1.1;
+            }
+            else {
+                Console.WriteLine("Ошибка в расчете надбавки");
+            }
+            Console.WriteLine($"Ваша надбавка составит - {summa * nad - summa}, сумма с учетом надбавки - {summa * nad}");
         }
         public static void sr10_4(){
-            Console.WriteLine("\nЗадача №4.");
+            Console.WriteLine("\nЗадача №4. Введите ваш стаж работы по специальности (лет):");
+            int year = Convert.ToInt32(Console.ReadLine());
+            int kf = 0;
+            if (year < 2) {
+                kf = 11;
+            }
+            else if (year >= 2 && year <= 5) {
+                kf = 12;
+            }
+            else if (year > 5) {
+                kf = 13;
+            }
+            else {
+                Console.WriteLine("Ошибка в расчетах коэффициента");
+            }
+            Console.WriteLine($"Коэффицент на бюджетное место = {kf}");
         }
         public static void sr10_5(){
-            Console.WriteLine("\nЗадача №5.");
+            Console.Write("\nЗадача №5. Введите время разговора (s):");
+            int s = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nВведите  продолжительность разгора (мин) (dt): ");
+            int dt = Convert.ToInt32(Console.ReadLine());
         }
         public static void sr10_6(){
             Console.WriteLine("\nЗадача №6.");
