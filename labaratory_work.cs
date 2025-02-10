@@ -317,10 +317,23 @@ namespace Project{
             Console.WriteLine($"Коэффицент на бюджетное место = {kf}");
         }
         public static void sr10_5(){
-            Console.Write("\nЗадача №5. Введите время разговора (s):");
-            int s = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nЗадача №5. Введите время разговора (t):");
+            int t = Convert.ToInt32(Console.ReadLine());
             Console.Write("\nВведите  продолжительность разгора (мин) (dt): ");
             int dt = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nВведите стоимость минуты разговора (s):");
+            int s = Convert.ToInt32(Console.ReadLine());
+            Console.Write("\nВведите день недели (d):");
+            string d = Console.ReadLine() ?? "";
+            double sum = s * dt;
+
+            if ((t >= 22 && t <= 24) || (t >= 0 && t <= 8)) {
+                sum = sum * 0.9;
+            }
+            else if (string.Equals(d, "Суббота", StringComparison.OrdinalIgnoreCase) || string.Equals(d, "Воскресенье", StringComparison.OrdinalIgnoreCase)) {
+                sum = sum * 0.95;
+            }
+            Console.WriteLine($"Стоимость переговоров: {sum}");
         }
         public static void sr10_6(){
             Console.WriteLine("\nЗадача №6.");
