@@ -372,7 +372,7 @@ namespace Project
         }
         public static void sr10_5()
         {
-            Console.Write("\nЗадача №5. Введите время разговора (t):");
+            Console.Write("\nЗадача №5. Введите время разговора (t): ");
             int t = Convert.ToInt32(Console.ReadLine());
             Console.Write("\nВведите  продолжительность разгора (мин) (dt): ");
             int dt = Convert.ToInt32(Console.ReadLine());
@@ -406,8 +406,8 @@ namespace Project
                 sum = sum * 0.9;
             }
             Console.WriteLine(
-                $"На территории РФ (0.35 руб.): {sum * 0.35}" +
-                $"Со странами ЕАЭС (0.90 руб.): {sum * 0.9}" +
+                $"На территории РФ (0.35 руб.): {sum * 0.35}\n" +
+                $"Со странами ЕАЭС (0.90 руб.): {sum * 0.9}\n" +
                 $"Со странами ЕС (1,5 руб.):    {sum * 1.5}"
             );
         }

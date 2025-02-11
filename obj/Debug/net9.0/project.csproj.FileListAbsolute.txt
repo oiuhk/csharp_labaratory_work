@@ -12,3 +12,4 @@ C:\Users\User\Documents\Programming\ProgramFile\CSharp files\project\obj\Debug\n
 C:\Users\User\Documents\Programming\ProgramFile\CSharp files\project\obj\Debug\net9.0\project.pdb
 C:\Users\User\Documents\Programming\ProgramFile\CSharp files\project\obj\Debug\net9.0\project.genruntimeconfig.cache
 C:\Users\User\Documents\Programming\ProgramFile\CSharp files\project\obj\Debug\net9.0\ref\project.dll
+C:\Users\User\Documents\Programming\ProgramFile\CSharp files\project\obj\Debug\net9.0\project.sourcelink.json
