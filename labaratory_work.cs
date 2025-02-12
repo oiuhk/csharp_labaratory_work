@@ -2,6 +2,7 @@ using System;
 using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using System.Linq;
+using System.Collections.Generic;
 
 
 namespace Project
@@ -9,7 +10,7 @@ namespace Project
     class Practice1
     {
         //! Основные задачи 1-4
-        public static void main_task1()
+        private static void main_task1()
         {
             Console.WriteLine("\nЗадача №1:");
             double x = 1.82, y = 18, s = 0, w = 0;
@@ -20,7 +21,7 @@ namespace Project
             w = (y - x) * (y / (1 + Math.Pow(y - x, 2)));
             Console.WriteLine($"w = {w}");
         }
-        public static void main_task2()
+        private static void main_task2()
         {
             Console.WriteLine("\nЗадача №2:");
             double x = 0.33, y = 0.02, s = 0, w = 0;
@@ -29,7 +30,7 @@ namespace Project
             w = x * (Math.Sin(x) + Math.Cos(y));
             Console.WriteLine($"w = {w}");
         }
-        public static void main_task3()
+        private static void main_task3()
         {
             Console.WriteLine("\nЗадача №3. Введите значение t: ");
             double a = -0.5, b = 1.7, s = 0, w = 0; // x = 0.44
@@ -39,7 +40,7 @@ namespace Project
             w = b * Math.Sin(a * Math.Pow(t, 2) * Math.Cos(a * t)) - 1;
             Console.WriteLine($"w = {w}");
         }
-        public static void main_task4()
+        private static void main_task4()
         {
             Console.WriteLine("\nЗадача №4:");
             double a = -0.5, b = 15.5, x = -2.9, s = 0, w = 0;
@@ -50,7 +51,7 @@ namespace Project
         }
 
         //! Самостоятельная работа 1-10
-        public static void sr10_1()
+        private static void sr10_1()
         {
             Console.WriteLine("Задача №1. Введите величину Z:");
             double z = Convert.ToDouble(Console.ReadLine());
@@ -61,7 +62,7 @@ namespace Project
                 $"Гигабайт: {z / Math.Pow(1024, 3)}\n" +
                 $"Терабайт: {z / Math.Pow(1024, 4)}\n");
         }
-        public static void sr10_2()
+        private static void sr10_2()
         {
             Console.WriteLine("\nЗадача №2. Введите a, b:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -72,7 +73,7 @@ namespace Project
                 $"Произведение: {a * b}\n" +
                 $"Частное:      {a / b}\n");
         }
-        public static void sr10_3()
+        private static void sr10_3()
         {
             Console.WriteLine("\nЗадача №3. Введите m1, m2, R:");
             double m1 = Convert.ToDouble(Console.ReadLine());
@@ -82,7 +83,7 @@ namespace Project
             double f = g * (m1 * m2) / Math.Pow(r, 2);
             Console.WriteLine($"F = {f}");
         }
-        public static void sr10_4()
+        private static void sr10_4()
         {
             Console.WriteLine("\nЗадача №4. Введите a, b, h:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -91,7 +92,7 @@ namespace Project
             double s = (a + b) * h;
             Console.WriteLine($"S = {s}");
         }
-        public static void sr10_5()
+        private static void sr10_5()
         {
             Console.WriteLine("\nЗадача №5. Введите R и U:");
             double r = Convert.ToDouble(Console.ReadLine());
@@ -99,13 +100,13 @@ namespace Project
             double i = u / r;
             Console.WriteLine($"I = {i}");
         }
-        public static void sr10_6()
+        private static void sr10_6()
         {
             Console.WriteLine("\nЗадача №6. Введите L(см):");
             int l = (int)(Convert.ToDouble(Console.ReadLine()) / 100);
             Console.WriteLine($"L(м) = {l}");
         }
-        public static void sr10_7()
+        private static void sr10_7()
         {
             Console.WriteLine("\nЗадача №7. Введите R:");
             double r = Convert.ToDouble(Console.ReadLine());
@@ -113,14 +114,14 @@ namespace Project
             double p = Math.PI * Math.Pow(r, 2);
             Console.WriteLine($"Длина окружности: {d}; Площадь круга: {p}");
         }
-        public static void sr10_8()
+        private static void sr10_8()
         {
             Console.WriteLine("\nЗадача №8. Введите размер файла (байты):");
             int b = Convert.ToInt32(Console.ReadLine());
             int k = b / 1024;
             Console.WriteLine($"Кол-во килобайтов: {k}");
         }
-        public static void sr10_9()
+        private static void sr10_9()
         {
             Console.WriteLine("\nЗадача №9. Введите a, b, c:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -129,7 +130,7 @@ namespace Project
             double cao = (Math.Pow(a, 2) + Math.Pow(b, 2) + Math.Pow(c, 2)) / 3;
             Console.WriteLine($"Среднее арифметическое: {cao}");
         }
-        public static void sr10_10()
+        private static void sr10_10()
         {
             Console.WriteLine("\nЗадача №10. Введите a, b, c:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -141,14 +142,14 @@ namespace Project
         }
 
         //! Самостоятельная работа 1-5
-        public static void sr5_1()
+        private static void sr5_1()
         {
             Console.WriteLine("Задача №1. Введите t:");
             double t = Convert.ToDouble(Console.ReadLine());
             double s = 3 * Math.Pow(t, 2) - 6 * t;
             Console.WriteLine($"Скорость тела: {s}");
         }
-        public static void sr5_2()
+        private static void sr5_2()
         {
             Console.WriteLine("\nЗадача №2. Введите катет и гипотенузу:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -162,14 +163,14 @@ namespace Project
         {
             return (Math.Exp(x) - Math.Exp(-x)) / 2;
         }
-        public static void sr5_3()
+        private static void sr5_3()
         {
             Console.WriteLine("\nЗадача №3. Введите x:");
             double x = Convert.ToDouble(Console.ReadLine());
             double yx = sr5_3_sh(x) * Math.Tan(x + 1) - Math.Pow(Math.Tan(2 + sr5_3_sh(x - 1)), 2);
             Console.WriteLine($"Значение функции: {yx}");
         }
-        public static void sr5_4()
+        private static void sr5_4()
         {
             Console.WriteLine("\nЗадача №4. Введите катет и гипотенузу:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -179,7 +180,7 @@ namespace Project
             Console.WriteLine($"Второй катет: {b}");
             Console.WriteLine($"Площадь треугольника: {p}");
         }
-        public static void sr5_5()
+        private static void sr5_5()
         {
             Console.WriteLine("\nЗадача №5. Введите a, b:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -214,11 +215,24 @@ namespace Project
             sr5_5();
         }
     }
+    /*
+        1.Программа на C# состоит из одного или нескольких файлов, каждый из которых содержит ноль или более пространств имен. 
+        Пространство имен содержит типы, такие как классы, структуры, интерфейсы, перечисления и делегаты, или другие пространства имен. 
+        Типовая структура программы включает объявление пространства имен (контейнера), объявление класса (основной сущности программы), 
+        методы класса (подпрограммы), операторы, выражения и комментарии35. Программа также включает подключаемые библиотеки, основной класс, 
+        точку входа и инструкции2.
+        2.Примеры директив препроцессора в C# включают #define и #if.
+        3.Идентификатор — это пользовательское имя для переменной, константы, метода или типа. 
+        Правила записи идентификаторов включают возможность использования букв, цифр (кроме первой позиции) 
+        и символа подчеркивания, учет регистра, отсутствие пробелов, допустимость букв национальных алфавитов 
+        и escape-последовательностей Unicode, а также запрет на совпадение с ключевыми словами.
+        4.Основные типы данных в C# включают decimal, byte, ushort, uint, ulong, sbyte, short, int, long, float, double и char.
+    */
 
 
-    class Pracrice2
+    class Practice2
     {
-        public static void main_task1()
+        private static void main_task1()
         {
             Console.WriteLine("\nЗадача №1. Введите скорость ветра:");
             double wind_speed = Convert.ToDouble(Console.ReadLine());
@@ -246,7 +260,7 @@ namespace Project
 
             Console.WriteLine($"Характер ветра: {wind_character}");
         }
-        public static void main_task2()
+        private static void main_task2()
         {
             Console.WriteLine("\nЗадача №2. Введите длинну проводника: ");
             double l = Convert.ToDouble(Console.ReadLine());
@@ -258,6 +272,11 @@ namespace Project
             double s1 = Convert.ToDouble(Console.ReadLine());
             double s2 = Convert.ToDouble(Console.ReadLine());
             double s3 = Convert.ToDouble(Console.ReadLine());
+            if (r1 < 0 || r2 < 0 || r3 < 0 || s1 < 0 || s2 < 0 || s3 < 0)
+            {
+                Console.WriteLine("Числа должны быть положительными");
+                return;
+            }
             double p1 = r1 * s1 / l;
             double p2 = r2 * s2 / l;
             double p3 = r3 * s3 / l;
@@ -275,7 +294,7 @@ namespace Project
             }
             Console.WriteLine($"Проводник с наибольшим удельным сопротивлением ({p_max}) под номером {p_num}");
         }
-        public static void main_task3()
+        private static void main_task3()
         {
             Console.WriteLine("\nЗадача №3. Введите параметры A, B:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -283,6 +302,7 @@ namespace Project
             if (b >= a)
             {
                 Console.WriteLine("Ошибка в расчетах (B >= A)");
+                return;
             }
             double valia = a - b;
             string max_name = "Вера";
@@ -294,9 +314,9 @@ namespace Project
             }
             Console.WriteLine($"Больше всех клубники набрала {max_name}, собрав больше на {difference} кг.");
         }
-        public static void sr10_1()
+        private static void sr10_1()
         {
-            Console.WriteLine("\nЗадача №1. Введите сумму депозита:");
+            Console.WriteLine("Задача №1. Введите сумму депозита:");
             double s = Convert.ToDouble(Console.ReadLine());
             if (s < 50000)
             {
@@ -308,7 +328,7 @@ namespace Project
             }
             Console.WriteLine($"Сумма выплаты через год составит {s}");
         }
-        public static void sr10_2()
+        private static void sr10_2()
         {
             Console.WriteLine("\nЗадача №2. Введите ваш стаж работы (лет):");
             double year = Convert.ToDouble(Console.ReadLine());
@@ -327,7 +347,7 @@ namespace Project
             }
             Console.WriteLine($"Ваша надбавка составит {nad}");
         }
-        public static void sr10_3()
+        private static void sr10_3()
         {
             Console.WriteLine("\nЗадача №3. Введите сумму вашей зарплаты и стаж (лет):");
             double summa = Convert.ToDouble(Console.ReadLine());
@@ -347,7 +367,7 @@ namespace Project
             }
             Console.WriteLine($"Ваша надбавка составит - {summa * nad - summa}, сумма с учетом надбавки - {summa * nad}");
         }
-        public static void sr10_4()
+        private static void sr10_4()
         {
             Console.WriteLine("\nЗадача №4. Введите ваш стаж работы по специальности (лет):");
             int year = Convert.ToInt32(Console.ReadLine());
@@ -370,7 +390,7 @@ namespace Project
             }
             Console.WriteLine($"Коэффицент на бюджетное место = {kf}");
         }
-        public static void sr10_5()
+        private static void sr10_5()
         {
             Console.Write("\nЗадача №5. Введите время разговора (t): ");
             int t = Convert.ToInt32(Console.ReadLine());
@@ -392,7 +412,7 @@ namespace Project
             }
             Console.WriteLine($"Стоимость переговоров: {sum}");
         }
-        public static void sr10_6()
+        private static void sr10_6()
         {
             Console.WriteLine("\nЗадача №6. Введите  продолжительность разгора (мин) (dt):");
             int dt = Convert.ToInt32(Console.ReadLine());
@@ -411,9 +431,9 @@ namespace Project
                 $"Со странами ЕС (1,5 руб.):    {sum * 1.5}"
             );
         }
-        public static void sr10_7()
+        private static void sr10_7()
         {
-            Console.WriteLine("Задача №7. Введите год:");
+            Console.WriteLine("\nЗадача №7. Введите год:");
             int year = Convert.ToInt32(Console.ReadLine());
             string result = "Не високосный";
             if (year > -45 && year != 0 && (year < -9 || year > 9))
@@ -429,7 +449,7 @@ namespace Project
             }
             Console.WriteLine(result);
         }
-        public static void sr10_8()
+        private static void sr10_8()
         {
             Console.WriteLine("\nЗадача №8. Введите число от 1 до 12:");
             int num = Convert.ToInt32(Console.ReadLine());
@@ -480,7 +500,7 @@ namespace Project
                 Console.WriteLine("Введен неправильный номер месяца");
             }
         }
-        public static void sr10_9()
+        private static void sr10_9()
         {
             Console.WriteLine("\nЗадача №9. Введите три числа:");
             double a = Convert.ToDouble(Console.ReadLine());
@@ -490,7 +510,7 @@ namespace Project
             double max = numbers.Max();
             Console.WriteLine($"Максимальный элемент: {max}");
         }
-        public static void sr10_10()
+        private static void sr10_10()
         {
             Console.WriteLine("\nЗадача №10. Введите число от 1 до 99:");
             int number = Convert.ToInt32(Console.ReadLine());
@@ -531,6 +551,92 @@ namespace Project
             sr10_9();
             sr10_10();
         }
+        /*
+            1. Операторы выбора в C++  
+                В языке программирования C++ существуют два основных оператора выбора:  
+                - `if`: Используется для выполнения блока кода при выполнении определенного логического условия.  
+                - `switch`: Применяется для выбора одного из нескольких вариантов выполнения кода на основе значения выражения.
+            2. Различия между `if` и `switch`  
+                - Применение:  
+                - `if` используется для проверки логических условий и может обрабатывать сложные выражения с использованием операторов (`&&`, `||`).  
+                - `switch` работает только с фиксированными значениями (например, числа или символы).  
+                - Читаемость:  
+                - `switch` более удобен для выбора из множества фиксированных значений, так как его синтаксис проще и структурированнее.  
+                - Производительность:  
+                - В некоторых случаях `switch` может быть оптимизирован компилятором для повышения производительности, особенно при большом числе вариантов.
+            3. Что называется переключателем?  
+                Переключатель — это оператор `switch`, который выполняет выбор ветви программы на основе значения выражения. Если значение совпадает с одним 
+                из константных выражений в блоках `case`, выполняется соответствующий код.
+            4. Как осуществляется выход из переключателя?  
+                Выход из оператора `switch` осуществляется с помощью оператора `break`, который завершает выполнение текущего блока и передает управление 
+                следующему оператору после блока `switch`. Если `break` отсутствует, выполнение продолжается в следующем блоке `case`, что называется 
+                "проваливанием".
+         */
+    }
+
+
+    class Practice3
+    {
+        private static void main_task1()
+        {
+            Console.WriteLine("Задача №1.");
+            int sum_nums = 0;
+            for (int i = -99; i <= 99; i++)
+            {
+                sum_nums += Math.Abs(i);
+            }
+            Console.WriteLine($"Сумма чисел от -99 до 99 (модуль) = {sum_nums}");
+        }
+        private static void main_task2()
+        {
+            Console.WriteLine("\nЗадача №2.");
+        }
+        private static void main_task3()
+        {
+            Console.WriteLine("\nЗадача №3.");
+        }
+        private static void main_task4()
+        {
+            Console.WriteLine("\nЗадача №4.");
+        }
+        private static void main_task5()
+        {
+            Console.WriteLine("\nЗадача №5.");
+        }
+        private static void main_task6()
+        {
+            Console.WriteLine("\nЗадача №6.");
+        }
+        private static void main_task7()
+        {
+            Console.WriteLine("\nЗадача №7.");
+        }
+        private static void main_task8()
+        {
+            Console.WriteLine("\nЗадача №8.");
+        }
+        private static void main_task9()
+        {
+            Console.WriteLine("\nЗадача №9.");
+        }
+        private static void main_task10()
+        {
+            Console.WriteLine("\nЗадача №10.");
+        }
+        public static void loading()
+        {
+            Console.WriteLine("\n< Основные задачи 1-10 >\n");
+            main_task1();
+            main_task2();
+            main_task3();
+            main_task4();
+            main_task5();
+            main_task6();
+            main_task7();
+            main_task8();
+            main_task9();
+            main_task10();
+        }
     }
 
     //! Класс запуска
@@ -539,8 +645,9 @@ namespace Project
         static void Main()
         {
             // Practice1.loading();
-            Pracrice2.loading();
+            // Practice2.loading();
+            // Practice3.loading();
+            Console.ReadKey();
         }
     }
-
 }
