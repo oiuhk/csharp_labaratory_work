@@ -3,6 +3,7 @@ using System.IO.Compression;
 using System.Runtime.CompilerServices;
 using System.Linq;
 using System.Collections.Generic;
+using System.ComponentModel;
 
 
 namespace Project
@@ -589,39 +590,119 @@ namespace Project
         }
         private static void main_task2()
         {
-            Console.WriteLine("\nЗадача №2.");
+            Console.WriteLine("\nЗадача №2. Введите любое число:");
+            int num = Convert.ToInt32(Console.ReadLine());
+            List<int> nums_del = new List<int>();
+            for (int i = -Math.Abs(num); i <= Math.Abs(num); i++)
+            {
+                if (i != 0 && num % i == 0)
+                {
+                    nums_del.Add(i);
+                }
+            }
+            Console.WriteLine($"Делители числа {num}: {string.Join(" ", nums_del)}");
         }
         private static void main_task3()
         {
-            Console.WriteLine("\nЗадача №3.");
+            Console.WriteLine("\nЗадача №3. Введите цену конфет(1кг):");
+            double k = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Введите число n:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            for (int i = 1; i <= n; i++)
+            {
+                Console.WriteLine($"Цена за {i} кг. - {k * i}");
+            }
         }
         private static void main_task4()
         {
-            Console.WriteLine("\nЗадача №4.");
+            Console.WriteLine("\nЗадача №4. Введите число n:");
+            int n = Convert.ToInt32(Console.ReadLine());
+            List<int> nums = new List<int>();
+            for (int i = n; i >= 0; i--)
+            {
+                nums.Add(i);
+            }
+            Console.WriteLine($"Сумма всех чисел последовательности: {nums.Sum()}");
+            Console.WriteLine($"Количество всех чисел последовательности: {nums.Count()}");
         }
         private static void main_task5()
         {
-            Console.WriteLine("\nЗадача №5.");
+            Console.WriteLine("\nЗадача №5. Введите число n (n > 10):");
+            int n = Convert.ToInt32(Console.ReadLine());
+            List<int> nums = new List<int>();
+            if (n > 10)
+            {
+                for (int i = 10; i <= n; i++)
+                {
+                    if (i % 2 == 1 && i % 5 == 0)
+                    {
+                        nums.Add(i);
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("Число не соответствует условию");
+                return;
+            }
+            Console.WriteLine($"Нечетные кратные пяти числа: {string.Join(" ", nums)}");
         }
         private static void main_task6()
         {
             Console.WriteLine("\nЗадача №6.");
+            List<double> nums = new List<double>();
+            for (double i = 11; i < 100; i++)
+            {
+                nums.Add(Math.Pow(i, 2));
+            }
+            Console.WriteLine($"Квадраты чисел от 11 до 99: {string.Join(" ", nums)}");
         }
         private static void main_task7()
         {
             Console.WriteLine("\nЗадача №7.");
+            List<int> nums = new List<int>();
+            for (int i = -99; i <= 99; i++)
+            {
+                if (i < 0 && i % 2 != 0)
+                {
+                    nums.Add(Math.Abs(i));
+                }
+            }
+            Console.WriteLine($"Сумма модулей всех нечетных, отрицательных чисел от -99 до 99: {nums.Sum()}");
         }
         private static void main_task8()
         {
             Console.WriteLine("\nЗадача №8.");
+            for (int i = 1; i <= 20; i++)
+            {
+                Console.WriteLine($"{i} дюйм = {i * 2.54} см.");
+            }
         }
         private static void main_task9()
         {
             Console.WriteLine("\nЗадача №9.");
+            List<int> nums = new List<int>();
+            for (int i = 2; i <= 100; i++)
+            {
+                if (i % 2 == 0 && i % 5 == 0)
+                {
+                    nums.Add(i);
+                }
+            }
+            Console.WriteLine($"Четные числа кратные пяти в интервале от 2 до 100 включительно: {string.Join(" ", nums)}");
         }
         private static void main_task10()
         {
             Console.WriteLine("\nЗадача №10.");
+            List<int> nums = new List<int>();
+            for (int i = -500; i <= 500; i++)
+            {
+                if (Math.Abs(i) >= 100 && Math.Abs(i) <= 999 && Math.Abs(i / 100) % 2 == 0)
+                {
+                    nums.Add(i);
+                }
+            }
+            Console.WriteLine($"Все трехзначные числа, у которых четные сотни (от -500 до 500): {string.Join(" ", nums)}");
         }
         public static void loading()
         {
@@ -646,7 +727,7 @@ namespace Project
         {
             // Practice1.loading();
             // Practice2.loading();
-            // Practice3.loading();
+            Practice3.loading();
             Console.ReadKey();
         }
     }
